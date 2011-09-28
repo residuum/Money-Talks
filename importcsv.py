@@ -3,15 +3,15 @@
 from couchdbkit import Server, Database
 from couchdbkit.loaders import FileSystemDocsLoader
 from csv import DictReader
+from datetime import datetime
 import sys, subprocess, math, os
 
 def parseDoc(doc):
     for k,v in doc.items():
         if k=='Date':
-            splitDate=v.split('-')
-            doc['year'] = splitDate[0];
-            doc['month'] = splitDate[1];
-            doc['day'] = splitDate[2];
+            closeDate = datetime.strptime(v, '%Y-%m-%d')
+            doc['Year'] = closeDate.year
+            doc['DayOfYear'] = closeDate.timetuple().tm_yday
         if (isinstance(v,str)):
             #print k, v, v.isdigit()
             # #see if this string is really an int or a float

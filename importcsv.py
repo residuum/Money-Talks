@@ -51,8 +51,8 @@ def uploadFile(fname, uri, dbname):
   for doc in reader:
     newdoc = parseDoc(doc) #this just converts strings that are really numbers into ints and floats
     newdoc['index'] = indexName
-
-    docs.append(newdoc)
+    if newdoc['Year'] > 1990:
+        docs.append(newdoc)
 
     if len(docs)%checkpoint==0:
       docs = upload(db,docs)

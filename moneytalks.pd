@@ -192,9 +192,9 @@
 #X obj 415 331 / 100;
 #X obj 520 193 / 100;
 #X obj 640 171 / 100;
-#X obj 403 310 translateXYZ -2 0 1;
-#X obj 627 148 translateXYZ 2 0 1;
 #X obj 258 139 gemhead;
+#X obj 627 148 translateXYZ 2.2 0 0;
+#X obj 403 310 translateXYZ -2.2 0 0;
 #X msg 244 -7 1991;
 #X connect 5 0 0 0;
 #X connect 5 1 0 1;
@@ -206,7 +206,7 @@
 #X connect 5 4 28 0;
 #X connect 5 5 4 0;
 #X connect 5 5 29 0;
-#X connect 6 0 30 0;
+#X connect 6 0 32 0;
 #X connect 7 0 12 0;
 #X connect 10 0 14 0;
 #X connect 10 1 9 0;
@@ -226,7 +226,7 @@
 #X connect 27 0 18 1;
 #X connect 28 0 21 1;
 #X connect 29 0 25 1;
-#X connect 30 0 18 0;
+#X connect 30 0 16 0;
 #X connect 31 0 25 0;
-#X connect 32 0 16 0;
+#X connect 32 0 18 0;
 #X connect 33 0 5 0;

@@ -1,0 +1,31 @@
+___  ___                         _____     _ _        
+|  \/  |                        |_   _|   | | |       
+| .  . | ___  _ __   ___ _   _    | | __ _| | | _____ 
+| |\/| |/ _ \| '_ \ / _ \ | | |   | |/ _` | | |/ / __|
+| |  | | (_) | | | |  __/ |_| |   | | (_| | |   <\__ \
+\_|  |_/\___/|_| |_|\___|\__, |   \_/\__,_|_|_|\_\___/
+                          __/ |                       
+                         |___/                        
+
+Money Talks is an approach to sonify and visualise the development of stock market data.
+
+Needed for it is Puredata including the libraries zexy, Gem and PuREST JSON, Python, cURL and a local
+installation of CouchDB with no admin users specified ("admin party").
+
+To init the database, run
+
+make init
+
+To download the data for the stock indices from Yahoo using cURL, run
+
+make download
+
+To import the data, run
+
+make import
+
+And in the end run the Pd patch with
+
+pd moneytalks.pd
+
+Detailed instructions will follow.

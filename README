@@ -10,7 +10,8 @@ ___  ___                         _____     _ _
 Money Talks is an approach to sonify and visualise the development of stock market data.
 
 Needed for it is Puredata including the libraries zexy, Gem and PuREST JSON, Python, cURL and a local
-installation of CouchDB with no admin users specified ("admin party").
+installation of CouchDB with no admin users specified ("admin party"), plus some libraries,
+e.g. python-couchdbkit.
 
 To init the database, run
 
@@ -29,3 +30,7 @@ And in the end run the Pd patch with
 pd moneytalks.pd
 
 Detailed instructions will follow.
+
+Demos are available at 
+http://vimeo.com/30214179 (video)
+http://soundcloud.com/residuum/money-talks (Audio)

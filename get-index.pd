@@ -27,7 +27,7 @@
 #X obj 88 594 /;
 #X msg 231 423 stop;
 #X obj 88 475 fifop;
-#X obj 619 671 outlet;
+#X obj 377 661 outlet;
 #X obj 115 501 t b b;
 #X obj 87 308 list trim;
 #X obj 87 359 l2s;
@@ -39,17 +39,20 @@
 #X obj 478 296 list trim;
 #X msg 87 113 GET http://localhost:5984/indices/_design/sorted/_view/bydate?startkey=%5B"\$2"%2C\$1%2C0%5D&endkey=%5B"\$2"%2C\$1%2C366%5D
 ;
-#X obj 318 661 outlet;
+#X obj 197 668 outlet;
 #X obj 296 360 sel 0;
 #X msg 297 430 0;
 #X obj 87 230 route rows offset;
 #X obj 88 619 * 300;
-#X obj 173 668 outlet;
-#X obj 171 447 metro 200;
-#X msg 328 433 0.5;
+#X obj 142 672 outlet;
+#X obj 88 531 t f f f b f;
+#X obj 170 447 metro 250;
+#X obj 197 624 expr if($f1 != 0 && abs(($f1 - $f2)/ $f2) > 0.005 \,
+abs(($f1 - $f2) / $f2) * 5 \, 0.025);
+#X obj 196 598 f;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
-#X connect 1 1 44 0;
+#X connect 1 1 45 0;
 #X connect 2 0 41 0;
 #X connect 3 0 4 0;
 #X connect 4 0 29 0;
@@ -77,9 +80,8 @@
 #X connect 23 0 18 1;
 #X connect 23 1 19 1;
 #X connect 24 0 42 0;
-#X connect 25 0 44 0;
-#X connect 26 0 18 0;
-#X connect 26 0 43 0;
+#X connect 25 0 45 0;
+#X connect 26 0 44 0;
 #X connect 26 1 28 0;
 #X connect 28 0 27 0;
 #X connect 28 1 25 0;
@@ -93,10 +95,15 @@
 #X connect 36 0 17 0;
 #X connect 37 0 1 0;
 #X connect 39 0 40 0;
-#X connect 39 1 45 0;
 #X connect 40 0 38 0;
 #X connect 41 0 3 0;
 #X connect 41 1 39 0;
 #X connect 42 0 7 0;
-#X connect 44 0 26 0;
-#X connect 45 0 38 0;
+#X connect 44 0 18 0;
+#X connect 44 1 43 0;
+#X connect 44 2 47 1;
+#X connect 44 3 47 0;
+#X connect 44 4 46 1;
+#X connect 45 0 26 0;
+#X connect 46 0 38 0;
+#X connect 47 0 46 0;

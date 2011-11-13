@@ -25,7 +25,6 @@ def parseDoc(doc):
                     pass            
     return doc
 
-
 def upload(db, docs):
     db.bulk_save(docs)
     del docs
@@ -47,11 +46,21 @@ def uploadFile(fname, uri, dbname):
   #used for bulk uploading
   docs = list()
   checkpoint = 100
+  prevday = 0
 
   for doc in reader:
     newdoc = parseDoc(doc) #this just converts strings that are really numbers into ints and floats
     newdoc['index'] = indexName
+    while prevday - 1 > newdoc['DayOfYear'] or (newdoc['DayOfYear'] > 300 and prevday > 1 and prevday < 10) and newdoc['Year'] > 1994:
+        prevdoc = newdoc.copy()
+        prevday = prevday - 1
+        if prevday < newdoc['DayOfYear']:
+            prevdoc['Year'] = newdoc['Year'] + 1
+        prevdoc['DayOfYear'] = prevday
+        docs.append(prevdoc)
+
     if newdoc['Year'] > 1994:
+        prevday = newdoc['DayOfYear']
         docs.append(newdoc)
 
     if len(docs)%checkpoint==0:

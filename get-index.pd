@@ -6,7 +6,7 @@
 #X obj 87 281 json-decode;
 #X obj 87 670 outlet;
 #X obj 87 86 pack f s;
-#X obj 162 32 loadbang;
+#X obj 167 13 loadbang;
 #X obj 167 57 symbol \$1;
 #X obj 478 164 rest-json;
 #X msg 478 112 GET http://localhost:5984/indices/_design/sorted/_view/minmax?key="\$1"
@@ -46,6 +46,8 @@
 abs(($f1 - $f2) / $f1) * 10 \, 0.01);
 #X msg 87 113 GET http://localhost:5984/indices/_design/sorted/_view/bydate_closeonly?startkey=%5B"\$2"%2C\$1%2C0%5D&endkey=%5B"\$2"%2C\$1%2C366%5D
 ;
+#X obj 167 34 t b b;
+#X msg 250 56 set sync;
 #X connect 0 0 6 0;
 #X connect 1 0 2 0;
 #X connect 1 1 40 0;
@@ -53,7 +55,7 @@ abs(($f1 - $f2) / $f1) * 10 \, 0.01);
 #X connect 3 0 4 0;
 #X connect 4 0 27 0;
 #X connect 6 0 43 0;
-#X connect 7 0 8 0;
+#X connect 7 0 44 0;
 #X connect 8 0 10 0;
 #X connect 8 0 6 1;
 #X connect 9 0 11 0;
@@ -99,3 +101,6 @@ abs(($f1 - $f2) / $f1) * 10 \, 0.01);
 #X connect 41 0 42 0;
 #X connect 42 0 33 0;
 #X connect 43 0 1 0;
+#X connect 44 0 8 0;
+#X connect 44 1 45 0;
+#X connect 45 0 1 0;

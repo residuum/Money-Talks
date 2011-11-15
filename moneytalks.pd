@@ -1,4 +1,4 @@
-#N canvas 472 65 836 564 10;
+#N canvas 468 61 836 501 10;
 #X obj 255 148 dac~;
 #N canvas 44 51 994 666 get-data-from-couchdb 0;
 #X obj 157 78 inlet;
@@ -134,7 +134,7 @@
 #X restore 37 236 pd control-gem-window;
 #X obj 83 60 sel 1 0;
 #X msg 37 199 create \, 1 \, frame 25;
-#X obj 83 33 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 83 33 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj 213 321 scale;
 #X obj 378 255 gemhead;
@@ -237,16 +237,16 @@
 #X obj 535 371 pix_image ctex.jpg;
 #X obj 414 142 t b b;
 #X obj 344 59 t a a;
-#X obj 414 114 sel 2008 2009;
 #X obj 226 298 / 250;
 #X msg 297 14 1995;
+#X obj 414 114 sel 2007 2009;
 #X connect 1 0 19 0;
 #X connect 1 1 18 0;
 #X connect 1 2 44 0;
-#X connect 1 3 46 0;
+#X connect 1 3 45 0;
 #X connect 1 4 28 0;
 #X connect 1 5 33 0;
-#X connect 1 6 47 0;
+#X connect 1 6 46 0;
 #X connect 2 0 31 0;
 #X connect 3 0 8 0;
 #X connect 6 0 10 0;
@@ -287,8 +287,8 @@
 #X connect 43 0 22 0;
 #X connect 43 1 20 0;
 #X connect 44 0 24 0;
-#X connect 44 1 45 0;
-#X connect 45 0 43 0;
-#X connect 45 1 34 0;
-#X connect 46 0 12 1;
-#X connect 47 0 1 0;
+#X connect 44 1 47 0;
+#X connect 45 0 12 1;
+#X connect 46 0 1 0;
+#X connect 47 0 43 0;
+#X connect 47 1 34 0;
